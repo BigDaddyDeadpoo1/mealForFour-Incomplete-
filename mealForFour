@@ -76,9 +76,10 @@ appetizers = gets.chomp
  	drinksNum = gets.chomp
  	drinksNum.to_i
 
- 	if drinksNum == 1..4
- 		puts "Were they all the same price? (Y/n)"
+ 	if drinksNum == 1..12
+ 		puts "Were they all the same price? (Y/n/some)"
 		sameDrinks = gets.chomp
+		
 		if sameDrinks == "Y" || "y"
 			puts "How much were they each?"
 			sameDrinksPrice = gets.chomp
@@ -86,44 +87,57 @@ appetizers = gets.chomp
 			sameDrinksPrice = sameDrinksPrice * drinksNum
 			puts "So this is our total for #{drinksNum}: #{sameDrinksPrice}"
 			courseTotals.insert(sameDrinksPrice)
-		else 
-			next
-		end
- 	elsif drinksNum == 5..12
- 		puts "Were any of those by chance the same price as one another? (Y/n)"
-		manyDrinksSame = gets.chomp
 		
-		if manyDrinksSame == "Y" || "y"
-		puts "Alright how many were the same price?: "
-		samePriceD = gets.chomp
-		samePriceD.to_i
-		
+		elsif == "some" || "Some" 
+			
+			puts "Alright how many were the same price?: "
+			samePriceD = gets.chomp
+			samePriceD.to_i
+			
 			case samePriceD
-			when 2 
-				puts "What were those two priced at?"
-				sameDPriceTwo = gets.chomp
-				sameDPriceTwo.to_f
-				sameDPriceTwo *= 2
-				courseTotals.insert(sameDPriceTwo)
-			when 3
-				puts "What was the price of those three?"
-				sameDPriceThree = gets.chomp
-				sameDPriceThree.to_f
-				sameDPriceThree *= 3
-				courseTotals.insert(sameDPriceThree)
-			when 4
-				puts "What were those four priced at?"
-				sameDPriceFour = gets.chomp
-				sameDPriceFour.to_f
-				sameDPriceFour *= 4
-				courseTotals.insert(sameDPriceFour)
+				when 2 
+					puts "What were those two priced at?"
+					sameDPriceTwo = gets.chomp
+					sameDPriceTwo.to_f
+					sameDPriceTwo *= 2
+					courseTotals.insert(sameDPriceTwo)
+				when 3
+					puts "What was the price of those three?"
+					sameDPriceThree = gets.chomp
+					sameDPriceThree.to_f
+					sameDPriceThree *= 3
+					courseTotals.insert(sameDPriceThree)
+				when 4
+					puts "What were those four priced at?"
+					sameDPriceFour = gets.chomp
+					sameDPriceFour.to_f
+					sameDPriceFour *= 4
+					courseTotals.insert(sameDPriceFour)
 			when 5
 				
 			end
-		else
 		
+		else 
+			
+		 case drinksNum
+			when 1
+				puts "How much was it? "
+				drinkOne = gets.chomp
+				drinkOne.to_f
+				courseTotals.insert(drinkOne)
+			when 2
+				puts "How much was the first? "
+				drink2First = gets.chomp
+				puts "And the second? "
+				drink2Second = gets.chomp
+				drinks2Both = drink2First.to_f + drink2Second.to_f
+				puts "Here the total for the two "
+			when 3
+			
+			end
 		end
- 	else drinksNum == nil
+		
+	else drinksNum == nil
  		puts "So we didn't get any drink? (Y/n)"
 		noDrinks = gets.chomp
 		if noDrinks == "Y" || "y"
@@ -137,25 +151,13 @@ appetizers = gets.chomp
 				noDrinksFree = 0
 				courseTotals.insert(noDrinksFree)
 		end
+		
  	end
- case drinksNum
- when 1
- 	puts "How much was it? "
- 	drinkOne = gets.chomp
- 	drinkOne.to_f
- 	courseTotals.insert(drinkOne)
- when 2
- 	puts "How much was the first? "
- 	drink2First = gets.chomp
- 	puts "And the second? "
- 	drink2Second = gets.chomp
- 	drinks2Both = drink2First.to_f + drink2Second.to_f
- 	puts "Here the total for the two "
- when 3
 	
 else
-	nullDrinks = 0
-	courseTotals.insert(nullDrinks)
+aintNoDrinks = 0
+aintNoDrinks.to_f
+courseTotals.insert(aintNoDrinks)
 end
 
 
